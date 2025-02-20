@@ -1,7 +1,4 @@
 import reflex as rx
-import mercadopago
-import requests
-import os
 
 from .backend.backend import State
 from .navbar import navbar_dropdown
@@ -12,30 +9,6 @@ from .components.footer import footer
 from .components.banner import banner_home
 from .components.card import uiverse_card, uiverse_hover_card
 from .components.collection import collections_section
-
-from mercadopago.config import RequestOptions
-
-
-
-request_options = RequestOptions(
-    integrator_id="dev_24c65fb163bf11ea96500242ac130004",
-    platform_id="PLATFORM_ID"
-)
-sdk = mercadopago.SDK("APP_USR-1056655301498214-020611-12c683cb6e72cb85596b32dce372611c-2150440707", request_options=request_options)
-
-payment_data = {
-    "transaction_amount": 100,       # Monto de la transacción (número, normalmente entero o float)
-    "token": "CARD_TOKEN",           # Token de la tarjeta obtenido del front-end
-    "description": "Payment description",
-    "payment_method_id": 'visa',     # Método de pago (por ejemplo, 'visa')
-    "installments": 1,               # Número de cuotas
-    "payer": {
-        "email": 'test_user_123456@testuser.com'
-    }
-}
-
-result = sdk.payment().create(payment_data, request_options)
-payment = result["response"]
 
 
 
@@ -158,74 +131,10 @@ def agenda():
         align="center",
     )
 
-def create_preference():
-    # Inicializa el SDK con tu access token
-    sdk = mercadopago.SDK("APP_USR-1056655301498214-020611-12c683cb6e72cb85596b32dce372611c-2150440707")  # Reemplaza con tu token real
 
-    # Define los datos de la preferencia
-    preference_data = {
-        "items": [
-            {
-                "title": "My product",
-                "quantity": 1,
-                "unit_price": 500
-            }
-        ],
-        # Puedes agregar otros parámetros como back_urls, payer, notification_url, etc.
-    }
-
-    # Crea la preferencia
-    preference_response = sdk.preference().create(preference_data)
-    # El response generalmente es un diccionario que incluye la respuesta del API
-    print(preference_response)
-    # Extrae el preference_id de la respuesta
-    preference_id = preference_response["response"]["id"]
-    return preference_id
-
-
-class MercadoPagoWallet(rx.Component):
-    library = "@mercadopago/sdk-react"  # Librería externa de React.
-    tag = "Wallet"  # Componente React que se renderizará.
-
-    # Define la propiedad que espera el componente.
-    preference_id: rx.Var[str]
-
-    # Código personalizado para inicializar Mercado Pago.
-    def _get_custom_code(self) -> str:
-        return """
-        import { initMercadoPago } from '@mercadopago/sdk-react';
-        initMercadoPago('APP_USR-d71dabc5-0f50-45fb-b7e4-86472f3578e6', { locale: 'es-CL' });
-        """
-
-# Crea una función de conveniencia para usar el componente.
-mercadopago_wallet = MercadoPagoWallet.create
-
-def prueba():
-    return rx.vstack(
-            rx.heading("Ejemplo Twilio + Reflex"),
-            rx.text("Ingresa tu número con formato internacional (e.g., +34612345678):"),
-            rx.input(
-                # El valor del input está ligado a State.phone_number
-                on_blur=State.set_phone_number, 
-                placeholder="+34123456789", 
-                size="2",
-                border_color="blue.300"
-            ),
-            rx.button(
-                "Enviar mensaje",
-                color_scheme="blue",
-                on_click=State.send_whatsapp_message
-            ),
-            rx.text(State.status_message, color="green.600"),
-            spacing="3"
-        )
 
 def index() -> rx.Component:
-    preference_id = "2150440707-391f61df-4e9c-4667-8a6a-10c05a6b6524"
     return rx.vstack(
-        rx.box(
-            rx.script(src="https://sdk.mercadopago.com/js/v2", defer=True),
-        ),
         navbar_dropdown(),
         banner_home(),
         # rx.vstack(
@@ -416,5 +325,4 @@ app = rx.App(
 )
 app.add_page(index)
 
-app.add_page(prueba)
 
