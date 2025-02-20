@@ -3,26 +3,10 @@ import reflex as rx
 import random
 import smtplib
 from googletrans import Translator
-from twilio.rest import Client
 from reflex.components.radix.themes.base import (
     LiteralAccentColor,
  )
 
-TWILIO_ACCOUNT_SID ='ACebe4136dd78f2304217d2a0e4e8ccdb7'
-TWILIO_AUTH_TOKEN='cbed8038912edd5ca63d53cfa5faf2fe'
-TWILIO_WHATSAPP_NUMBER = "whatsapp:+16203373577"
-
-
-# # message = client.messages.create(
-# #   from_='whatsapp:+14155238886',
-# #   message="pruebita",
-# #   to='whatsapp:+56932653092'
-# )
-# message2 = client.messages.create(
-#         from_='+16203373577',
-#         body="este es un mensaje de prueba",
-#         to='+56932653092',
-#     )
 
 images = [
     {
@@ -133,41 +117,6 @@ class State(rx.State):
     search_term: str = ""
 
     message_status: str = ""
-
-    phone_number: str = ""
-    
-    status_message: str = ""
-
-    def set_phone_number(self, value: str):
-        """
-        Actualiza la variable phone_number mientras el usuario teclea.
-        """
-        self.phone_number = value
-
-    def send_whatsapp_message(self):
-        """
-        Envía un mensaje de WhatsApp usando Twilio al número ingresado.
-        """
-        # Validar que el usuario haya ingresado algo
-        if not self.phone_number:
-            self.status_message = "Por favor, ingresa un número."
-            return
-
-        # Crear cliente Twilio
-        client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-
-        # Construir número para Twilio => "whatsapp:+códigoPaisNúmero"
-        to_number = f"whatsapp:{self.phone_number}"
-
-        try:
-            message = client.messages.create(
-                body="¡Hola! Este es un mensaje automatizado desde Reflex + Twilio.",
-                from_=TWILIO_WHATSAPP_NUMBER,
-                to=to_number
-            )
-            self.status_message = f"Mensaje enviado correctamente (SID: {message.sid})"
-        except Exception as e:
-            self.status_message = f"Error al enviar mensaje: {str(e)}"
 
 
     @rx.event

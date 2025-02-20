@@ -3,8 +3,6 @@ import mercadopago
 import requests
 import os
 
-
-from twilio.rest import Client
 from .backend.backend import State
 from .navbar import navbar_dropdown
 from .galery import galery
