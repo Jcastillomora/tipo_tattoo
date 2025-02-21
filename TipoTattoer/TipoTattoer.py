@@ -2,8 +2,7 @@ import reflex as rx
 
 from .backend.backend import State
 from .navbar import navbar_dropdown
-from .galery import galery
-from .forms import event_form
+from .components.galery import galery
 from .components.whatsapp import whatsapp
 from .components.footer import footer
 from .components.banner import banner_home
@@ -119,16 +118,6 @@ def items_selector() -> rx.Component:
         justify_content="center",
         align_items="center",
         width="100%",
-    )
-
-
-@rx.page(route="/agenda")
-def agenda():
-    return rx.flex(
-        event_form(),
-        width="100%",
-        spacing="3",
-        align="center",
     )
 
 

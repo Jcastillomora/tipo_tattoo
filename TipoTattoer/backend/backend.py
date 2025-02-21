@@ -8,65 +8,65 @@ from reflex.components.radix.themes.base import (
  )
 
 
-images = [
-    {
-        "src": "/Dragonite destruturato.jpg",
-        "text": "Dragonite destruturato",
-        "category": "destruturato",  # Añadida categoría
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Ballena ilustrativa.jpg",
-        "text": "Ballena ilustrativa",
-        "category": "ilustrativo",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Astronauta ilustrativo.jpg",
-        "text": "Astronauta ilustrativo",
-        "category": "ilustrativo",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Sunflower destruturato.jpg",
-        "text": "Sunflower destruturato",
-        "category": "destruturato",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Axolote ilustrativo.jpg",
-        "text": "Axolote ilustrativo",
-        "category": "ilustrativo",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Faro destruturato.jpg",
-        "text": "Faro destruturato",
-        "category": "destruturato",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Manta raya destruturato.jpg",
-        "text": "Manta raya destruturato",
-        "category": "destruturato",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-    {
-        "src": "/Sun&moon ilustrativo.jpg",
-        "text": "Sun&moon ilustrativo",
-        "category": "ilustrativo",
-        "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
-    },
-]
+# images = [
+#     {
+#         "src": "/Dragonite destruturato.jpg",
+#         "text": "Dragonite destruturato",
+#         "category": "destruturato",  # Añadida categoría
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Ballena ilustrativa.jpg",
+#         "text": "Ballena ilustrativa",
+#         "category": "ilustrativo",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Astronauta ilustrativo.jpg",
+#         "text": "Astronauta ilustrativo",
+#         "category": "ilustrativo",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Sunflower destruturato.jpg",
+#         "text": "Sunflower destruturato",
+#         "category": "destruturato",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Axolote ilustrativo.jpg",
+#         "text": "Axolote ilustrativo",
+#         "category": "ilustrativo",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Faro destruturato.jpg",
+#         "text": "Faro destruturato",
+#         "category": "destruturato",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Manta raya destruturato.jpg",
+#         "text": "Manta raya destruturato",
+#         "category": "destruturato",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+#     {
+#         "src": "/Sun&moon ilustrativo.jpg",
+#         "text": "Sun&moon ilustrativo",
+#         "category": "ilustrativo",
+#         "img_class": "transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0 rounded-lg",
+#     },
+# ]
 
 
-chip_props = {
-    "radius": "full",
-    "variant": "surface",
-    "size": "3",
-    "cursor": "pointer",
-    "style": {"_hover": {"opacity": 0.75}},
-}
+# chip_props = {
+#     "radius": "full",
+#     "variant": "surface",
+#     "size": "3",
+#     "cursor": "pointer",
+#     "style": {"_hover": {"opacity": 0.75}},
+# }
 
 
 

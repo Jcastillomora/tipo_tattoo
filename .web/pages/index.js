@@ -10,7 +10,6 @@ import { ChevronDownIcon as LucideChevronDownIcon, FacebookIcon as LucideFaceboo
 import { toast, Toaster } from "sonner"
 import env from "$/env.json"
 import { Badge as RadixThemesBadge, Box as RadixThemesBox, Button as RadixThemesButton, Card as RadixThemesCard, DropdownMenu as RadixThemesDropdownMenu, Flex as RadixThemesFlex, Grid as RadixThemesGrid, Heading as RadixThemesHeading, Link as RadixThemesLink, Section as RadixThemesSection, Separator as RadixThemesSeparator, Switch as RadixThemesSwitch, Text as RadixThemesText, Tooltip as RadixThemesTooltip } from "@radix-ui/themes"
-import Script from "next/script"
 import NextLink from "next/link"
 import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
@@ -18,17 +17,96 @@ import NextHead from "next/head"
 
 
 
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
+export function Switch_80ab02ff86cd9ac80bc7e2e457b31131 () {
+  
+  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
-export function Errorboundary_62e1be9f4056e2a67ee12d35546f931e () {
+  const on_change_3585a6109a42717c9958b602d6bfbc40 = useCallback(((_ev_0) => (addEvents([(Event("reflex___state____state.tipo_tattoer___backend___backend____state.toggle_language", ({ ["value"] : _ev_0 }), ({  })))], [_ev_0], ({  })))), [addEvents, Event])
+
+
+
+  
+  return (
+    <RadixThemesSwitch checked={reflex___state____state__tipo_tattoer___backend___backend____state.show_english} color={"blue"} onCheckedChange={on_change_3585a6109a42717c9958b602d6bfbc40} size={"2"}/>
+  )
+}
+
+export function Heading_221859128d871ae3b07420c7483c8fb3 () {
+  
+  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
+
+
+
+
+
+  
+  return (
+    <RadixThemesHeading align={"center"} className={"font-extrabold text-slate-500 animate-flip-down text-3xl sm:text-4xl md:text-5xl lg:text-6xl p-5 md:p-8"} css={({ ["fontFamily"] : "Roboto", ["--default-font-family"] : "Roboto" })} highContrast={true}>
+
+{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["subtitle"]}
+</RadixThemesHeading>
+  )
+}
+
+export function Toaster_6e6ebf8d7ce589d59b7d382fb7576edf () {
+  
+  const { resolvedColorMode } = useContext(ColorModeContext)
+
+  refs['__toast'] = toast
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  const toast_props = ({ ["description"] : ("Check if server is reachable at "+getBackendURL(env.EVENT).href), ["closeButton"] : true, ["duration"] : 120000, ["id"] : "websocket-error" });
+  const [userDismissed, setUserDismissed] = useState(false);
+  (useEffect(
+() => {
+    if ((connectErrors.length >= 2)) {
+        if (!userDismissed) {
+            toast.error(
+                `Cannot connect to server: ${((connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : '')}.`,
+                {...toast_props, onDismiss: () => setUserDismissed(true)},
+            )
+        }
+    } else {
+        toast.dismiss("websocket-error");
+        setUserDismissed(false);  // after reconnection reset dismissed state
+    }
+}
+, [connectErrors]))
+
+
+
+
+  
+  return (
+    <Toaster closeButton={false} expand={true} position={"bottom-right"} richColors={true} theme={resolvedColorMode}/>
+  )
+}
+
+export function Link_6696505112d16f7dcdc929581c8f2e7b () {
+  
+  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
+
+
+
+
+
+  
+  return (
+    <RadixThemesLink asChild={true} css={({ ["textDecoration"] : "none", ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })}>
+
+<NextLink href={"/#"} passHref={true}>
+
+<RadixThemesText as={"p"} className={"text-slate-500"} css={({ ["textDecoration"] : "none" })} size={"4"} weight={"medium"}>
+
+{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav3"]}
+</RadixThemesText>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Errorboundary_02a5bfbffdc9fd834bad997c807751c3 () {
   
   const [addEvents, connectErrors] = useContext(EventLoopContext);
   const ref_collections = useRef(null); refs["ref_collections"] = ref_collections;
@@ -41,19 +119,15 @@ export function Errorboundary_62e1be9f4056e2a67ee12d35546f931e () {
 
   
   return (
-    <ErrorBoundary fallbackRender={((event_args) => (jsx("div", ({ ["css"] : ({ ["height"] : "100%", ["width"] : "100%", ["position"] : "absolute", ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center" }) }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["flexDirection"] : "column", ["gap"] : "1rem" }) }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["flexDirection"] : "column", ["gap"] : "1rem", ["maxWidth"] : "50ch", ["border"] : "1px solid #888888", ["borderRadius"] : "0.25rem", ["padding"] : "1rem" }) }), (jsx("h2", ({ ["css"] : ({ ["fontSize"] : "1.25rem", ["fontWeight"] : "bold" }) }), (jsx(Fragment, ({  }), "An error occurred while rendering this page.")))), (jsx("p", ({ ["css"] : ({ ["opacity"] : "0.75" }) }), (jsx(Fragment, ({  }), "This is an error with the application itself.")))), (jsx("details", ({  }), (jsx("summary", ({ ["css"] : ({ ["padding"] : "0.5rem" }) }), (jsx(Fragment, ({  }), "Error message")))), (jsx("div", ({ ["css"] : ({ ["width"] : "100%", ["maxHeight"] : "50vh", ["overflow"] : "auto", ["background"] : "#000", ["color"] : "#fff", ["borderRadius"] : "0.25rem" }) }), (jsx("div", ({ ["css"] : ({ ["padding"] : "0.5rem", ["width"] : "fit-content" }) }), (jsx("pre", ({  }), (jsx(Fragment, ({  }), event_args.error.stack)))))))), (jsx("button", ({ ["css"] : ({ ["padding"] : "0.35rem 0.75rem", ["margin"] : "0.5rem", ["background"] : "#fff", ["color"] : "#000", ["border"] : "1px solid #000", ["borderRadius"] : "0.25rem", ["fontWeight"] : "bold" }), ["onClick"] : ((...args) => (addEvents([(Event("_call_function", ({ ["function"] : (() => (navigator["clipboard"]["writeText"](event_args.error.stack))), ["callback"] : null }), ({  })))], args, ({  })))) }), (jsx(Fragment, ({  }), "Copy")))))))), (jsx("hr", ({ ["css"] : ({ ["borderColor"] : "currentColor", ["opacity"] : "0.25" }) }))), (jsx("a", ({ ["href"] : "https://reflex.dev" }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["alignItems"] : "baseline", ["justifyContent"] : "center", ["fontFamily"] : "monospace", ["--default-font-family"] : "monospace", ["gap"] : "0.5rem" }) }), (jsx(Fragment, ({  }), "Built with ")), (jsx("svg", ({ ["css"] : ({ ["viewBox"] : "0 0 56 12", ["fill"] : "currentColor" }), ["height"] : "12", ["width"] : "56", ["xmlns"] : "http://www.w3.org/2000/svg" }), (jsx("path", ({ ["d"] : "M0 11.5999V0.399902H8.96V4.8799H6.72V2.6399H2.24V4.8799H6.72V7.1199H2.24V11.5999H0ZM6.72 11.5999V7.1199H8.96V11.5999H6.72Z" }))), (jsx("path", ({ ["d"] : "M11.2 11.5999V0.399902H17.92V2.6399H13.44V4.8799H17.92V7.1199H13.44V9.3599H17.92V11.5999H11.2Z" }))), (jsx("path", ({ ["d"] : "M20.16 11.5999V0.399902H26.88V2.6399H22.4V4.8799H26.88V7.1199H22.4V11.5999H20.16Z" }))), (jsx("path", ({ ["d"] : "M29.12 11.5999V0.399902H31.36V9.3599H35.84V11.5999H29.12Z" }))), (jsx("path", ({ ["d"] : "M38.08 11.5999V0.399902H44.8V2.6399H40.32V4.8799H44.8V7.1199H40.32V9.3599H44.8V11.5999H38.08Z" }))), (jsx("path", ({ ["d"] : "M47.04 4.8799V0.399902H49.28V4.8799H47.04ZM53.76 4.8799V0.399902H56V4.8799H53.76ZM49.28 7.1199V4.8799H53.76V7.1199H49.28ZM47.04 11.5999V7.1199H49.28V11.5999H47.04ZM53.76 11.5999V7.1199H56V11.5999H53.76Z" }))))))))))))))} onError={on_error_0f5dbf674521530422d73a7946faf6d4}>
+    <ErrorBoundary fallbackRender={((event_args) => (jsx("div", ({ ["css"] : ({ ["height"] : "100%", ["width"] : "100%", ["position"] : "absolute", ["display"] : "flex", ["alignItems"] : "center", ["justifyContent"] : "center" }) }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["flexDirection"] : "column", ["gap"] : "1rem" }) }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["flexDirection"] : "column", ["gap"] : "1rem", ["maxWidth"] : "50ch", ["border"] : "1px solid #888888", ["borderRadius"] : "0.25rem", ["padding"] : "1rem" }) }), (jsx("h2", ({ ["css"] : ({ ["fontSize"] : "1.25rem", ["fontWeight"] : "bold" }) }), (jsx(Fragment, ({  }), "An error occurred while rendering this page.")))), (jsx("p", ({ ["css"] : ({ ["opacity"] : "0.75" }) }), (jsx(Fragment, ({  }), "This is an error with the application itself.")))), (jsx("details", ({  }), (jsx("summary", ({ ["css"] : ({ ["padding"] : "0.5rem" }) }), (jsx(Fragment, ({  }), "Error message")))), (jsx("div", ({ ["css"] : ({ ["width"] : "100%", ["maxHeight"] : "50vh", ["overflow"] : "auto", ["background"] : "#000", ["color"] : "#fff", ["borderRadius"] : "0.25rem" }) }), (jsx("div", ({ ["css"] : ({ ["padding"] : "0.5rem", ["width"] : "fit-content" }) }), (jsx("pre", ({  }), (jsx(Fragment, ({  }), event_args.error.stack)))))))), (jsx("button", ({ ["css"] : ({ ["padding"] : "0.35rem 0.75rem", ["margin"] : "0.5rem", ["background"] : "#fff", ["color"] : "#000", ["border"] : "1px solid #000", ["borderRadius"] : "0.25rem", ["fontWeight"] : "bold" }), ["onClick"] : ((...args) => (addEvents([(Event("_call_function", ({ ["function"] : (() => (navigator["clipboard"]["writeText"](event_args.error.stack))), ["callback"] : null }), ({  })))], args, ({  })))) }), (jsx(Fragment, ({  }), "Copy")))))))), (jsx("hr", ({ ["css"] : ({ ["borderColor"] : "currentColor", ["opacity"] : "0.25" }) }))), (jsx("a", ({ ["href"] : "https://reflex.dev" }), (jsx("div", ({ ["css"] : ({ ["display"] : "flex", ["alignItems"] : "baseline", ["justifyContent"] : "center", ["fontFamily"] : "monospace", ["--default-font-family"] : "monospace", ["gap"] : "0.5rem" }) }), (jsx(Fragment, ({  }), "Built with ")), (jsx("svg", ({ ["aria-label"] : "Reflex", ["css"] : ({ ["fill"] : "currentColor" }), ["height"] : "12", ["role"] : "img", ["width"] : "56", ["xmlns"] : "http://www.w3.org/2000/svg" }), (jsx("path", ({ ["d"] : "M0 11.5999V0.399902H8.96V4.8799H6.72V2.6399H2.24V4.8799H6.72V7.1199H2.24V11.5999H0ZM6.72 11.5999V7.1199H8.96V11.5999H6.72Z" }))), (jsx("path", ({ ["d"] : "M11.2 11.5999V0.399902H17.92V2.6399H13.44V4.8799H17.92V7.1199H13.44V9.3599H17.92V11.5999H11.2Z" }))), (jsx("path", ({ ["d"] : "M20.16 11.5999V0.399902H26.88V2.6399H22.4V4.8799H26.88V7.1199H22.4V11.5999H20.16Z" }))), (jsx("path", ({ ["d"] : "M29.12 11.5999V0.399902H31.36V9.3599H35.84V11.5999H29.12Z" }))), (jsx("path", ({ ["d"] : "M38.08 11.5999V0.399902H44.8V2.6399H40.32V4.8799H44.8V7.1199H40.32V9.3599H44.8V11.5999H38.08Z" }))), (jsx("path", ({ ["d"] : "M47.04 4.8799V0.399902H49.28V4.8799H47.04ZM53.76 4.8799V0.399902H56V4.8799H53.76ZM49.28 7.1199V4.8799H53.76V7.1199H49.28ZM47.04 11.5999V7.1199H49.28V11.5999H47.04ZM53.76 11.5999V7.1199H56V11.5999H53.76Z" }))), (jsx("title", ({  }), (jsx(Fragment, ({  }), "Reflex")))))))))))))))} onError={on_error_0f5dbf674521530422d73a7946faf6d4}>
 
 <Fragment>
 
-<Div_602c14884fa2de27f522fe8f94374b02/>
+<Div_0c4c0d922d990c245023c72baae2d5e1/>
 <Toaster_6e6ebf8d7ce589d59b7d382fb7576edf/>
 </Fragment>
 <RadixThemesFlex align={"center"} className={"rx-Stack bg-gray-100"} css={({ ["width"] : "100%", ["height"] : "100%", ["padding"] : "0" })} direction={"column"} gap={"0"}>
 
-<RadixThemesBox>
-
-<Script css={({ ["defer"] : true })} src={"https://sdk.mercadopago.com/js/v2"} strategy={"afterInteractive"}/>
-</RadixThemesBox>
 <RadixThemesFlex className={"bg-gradient-to-r from-slate-500 to-slate-200 px-10 py-10"} css={({ ["width"] : "100%" })} gap={"0"}>
 
 <RadixThemesBox css={({ ["width"] : "100%", ["spacinf"] : "0", ["@media screen and (min-width: 0)"] : ({ ["display"] : "none" }), ["@media screen and (min-width: 30em)"] : ({ ["display"] : "none" }), ["@media screen and (min-width: 48em)"] : ({ ["display"] : "none" }), ["@media screen and (min-width: 62em)"] : ({ ["display"] : "block" }) })}>
@@ -79,14 +153,7 @@ export function Errorboundary_62e1be9f4056e2a67ee12d35546f931e () {
 <Link_485741baf05dcc3a75961be8c3408828/>
 <RadixThemesDropdownMenu.Root css={({ ["color"] : "#ffffff" })}>
 
-<RadixThemesDropdownMenu.Trigger>
-
-<RadixThemesButton className={"text-slate-500"} css={({ ["weight"] : "medium" })} size={"3"} variant={"ghost"}>
-
-<Text_30bfa07aac7c712d6830ac81b3b39ee0/>
-<LucideChevronDownIcon css={({ ["textDecoration"] : "none", ["color"] : "var(--current-color)" })}/>
-</RadixThemesButton>
-</RadixThemesDropdownMenu.Trigger>
+<Dropdownmenu__trigger_161956775e3d5b291d4cae3d350a67bd/>
 <RadixThemesDropdownMenu.Content className={"bg-slate-200 text-slate-500"}>
 
 <RadixThemesDropdownMenu.Item>
@@ -726,7 +793,41 @@ export function Errorboundary_62e1be9f4056e2a67ee12d35546f931e () {
   )
 }
 
-export function Fragment_f2f0916d2fcc08b7cdf76cec697f0750 () {
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
+export function Dropdownmenu__trigger_161956775e3d5b291d4cae3d350a67bd () {
+  
+  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
+
+
+
+
+
+  
+  return (
+    <RadixThemesDropdownMenu.Trigger>
+
+<RadixThemesButton className={"text-slate-500"} css={({ ["weight"] : "medium" })} size={"3"} variant={"ghost"}>
+
+<RadixThemesText as={"p"} css={({ ["textDecoration"] : "none" })} size={"4"} weight={"medium"}>
+
+{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav2"]}
+</RadixThemesText>
+<LucideChevronDownIcon css={({ ["textDecoration"] : "none", ["color"] : "var(--current-color)" })}/>
+</RadixThemesButton>
+</RadixThemesDropdownMenu.Trigger>
+  )
+}
+
+export function Fragment_c179379f847dbcf00ba21f73b0ad1b3d () {
   
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
@@ -747,6 +848,23 @@ export function Fragment_f2f0916d2fcc08b7cdf76cec697f0750 () {
   <Fragment/>
 )}
 </Fragment>
+  )
+}
+
+export function Div_0c4c0d922d990c245023c72baae2d5e1 () {
+  
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+
+
+
+  
+  return (
+    <div css={({ ["position"] : "fixed", ["width"] : "100vw", ["height"] : "0" })} title={("Connection Error: "+((connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''))}>
+
+<Fragment_c179379f847dbcf00ba21f73b0ad1b3d/>
+</div>
   )
 }
 
@@ -773,79 +891,6 @@ export function Link_485741baf05dcc3a75961be8c3408828 () {
   )
 }
 
-export function Link_247fe42032eac05b9c354ab5b3a30913 () {
-  
-  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
-
-
-
-
-
-  
-  return (
-    <RadixThemesLink asChild={true} css={({ ["textDecoration"] : "none", ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })}>
-
-<NextLink href={"/#collections"} passHref={true}>
-
-<RadixThemesText as={"p"} className={"text-slate-500"} css={({ ["textDecoration"] : "none" })} size={"4"} weight={"medium"}>
-
-{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav4"]}
-</RadixThemesText>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Heading_9f394dfe6760a00687db451dc234e0ec () {
-  
-  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
-
-
-
-
-
-  
-  return (
-    <RadixThemesHeading align={"center"} className={"text-slate-500 font-semibold text-xl sm:text-2xl md:text-3xl p-5 sm:p-8 md:p-10"}>
-
-{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["header"]}
-</RadixThemesHeading>
-  )
-}
-
-export function Div_602c14884fa2de27f522fe8f94374b02 () {
-  
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-
-
-
-  
-  return (
-    <div css={({ ["position"] : "fixed", ["width"] : "100vw", ["height"] : "0" })} title={("Connection Error: "+((connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''))}>
-
-<Fragment_f2f0916d2fcc08b7cdf76cec697f0750/>
-</div>
-  )
-}
-
-export function Switch_80ab02ff86cd9ac80bc7e2e457b31131 () {
-  
-  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  const on_change_3585a6109a42717c9958b602d6bfbc40 = useCallback(((_ev_0) => (addEvents([(Event("reflex___state____state.tipo_tattoer___backend___backend____state.toggle_language", ({ ["value"] : _ev_0 }), ({  })))], [_ev_0], ({  })))), [addEvents, Event])
-
-
-
-  
-  return (
-    <RadixThemesSwitch checked={reflex___state____state__tipo_tattoer___backend___backend____state.show_english} color={"blue"} onCheckedChange={on_change_3585a6109a42717c9958b602d6bfbc40} size={"2"}/>
-  )
-}
-
 export function Link_724686c06324770adce2b3a770e5ff82 () {
   
   const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
@@ -869,40 +914,7 @@ export function Link_724686c06324770adce2b3a770e5ff82 () {
   )
 }
 
-export function Toaster_6e6ebf8d7ce589d59b7d382fb7576edf () {
-  
-  const { resolvedColorMode } = useContext(ColorModeContext)
-
-  refs['__toast'] = toast
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-  const toast_props = ({ ["description"] : ("Check if server is reachable at "+getBackendURL(env.EVENT).href), ["closeButton"] : true, ["duration"] : 120000, ["id"] : "websocket-error" });
-  const [userDismissed, setUserDismissed] = useState(false);
-  (useEffect(
-() => {
-    if ((connectErrors.length >= 2)) {
-        if (!userDismissed) {
-            toast.error(
-                `Cannot connect to server: ${((connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : '')}.`,
-                {...toast_props, onDismiss: () => setUserDismissed(true)},
-            )
-        }
-    } else {
-        toast.dismiss("websocket-error");
-        setUserDismissed(false);  // after reconnection reset dismissed state
-    }
-}
-, [connectErrors]))
-
-
-
-
-  
-  return (
-    <Toaster closeButton={false} expand={true} position={"bottom-right"} richColors={true} theme={resolvedColorMode}/>
-  )
-}
-
-export function Heading_221859128d871ae3b07420c7483c8fb3 () {
+export function Heading_9f394dfe6760a00687db451dc234e0ec () {
   
   const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
 
@@ -912,14 +924,14 @@ export function Heading_221859128d871ae3b07420c7483c8fb3 () {
 
   
   return (
-    <RadixThemesHeading align={"center"} className={"font-extrabold text-slate-500 animate-flip-down text-3xl sm:text-4xl md:text-5xl lg:text-6xl p-5 md:p-8"} css={({ ["fontFamily"] : "Roboto", ["--default-font-family"] : "Roboto" })} highContrast={true}>
+    <RadixThemesHeading align={"center"} className={"text-slate-500 font-semibold text-xl sm:text-2xl md:text-3xl p-5 sm:p-8 md:p-10"}>
 
-{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["subtitle"]}
+{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["header"]}
 </RadixThemesHeading>
   )
 }
 
-export function Link_6696505112d16f7dcdc929581c8f2e7b () {
+export function Link_247fe42032eac05b9c354ab5b3a30913 () {
   
   const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
 
@@ -931,31 +943,14 @@ export function Link_6696505112d16f7dcdc929581c8f2e7b () {
   return (
     <RadixThemesLink asChild={true} css={({ ["textDecoration"] : "none", ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })}>
 
-<NextLink href={"/#"} passHref={true}>
+<NextLink href={"/#collections"} passHref={true}>
 
 <RadixThemesText as={"p"} className={"text-slate-500"} css={({ ["textDecoration"] : "none" })} size={"4"} weight={"medium"}>
 
-{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav3"]}
+{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav4"]}
 </RadixThemesText>
 </NextLink>
 </RadixThemesLink>
-  )
-}
-
-export function Text_30bfa07aac7c712d6830ac81b3b39ee0 () {
-  
-  const reflex___state____state__tipo_tattoer___backend___backend____state = useContext(StateContexts.reflex___state____state__tipo_tattoer___backend___backend____state)
-
-
-
-
-
-  
-  return (
-    <RadixThemesText as={"p"} css={({ ["textDecoration"] : "none" })} size={"4"} weight={"medium"}>
-
-{reflex___state____state__tipo_tattoer___backend___backend____state.current_texts["nav2"]}
-</RadixThemesText>
   )
 }
 
@@ -966,6 +961,6 @@ export default function Component() {
 
 
   return (
-    <Errorboundary_62e1be9f4056e2a67ee12d35546f931e/>
+    <Errorboundary_02a5bfbffdc9fd834bad997c807751c3/>
   )
 }
